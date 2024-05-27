@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospitalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Doctor_Log">
+    <Key>
+      <PropertyRef Name="User_namee" />
+    </Key>
+    <Property Name="User_namee" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Passwordd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Doctorss">
+    <Key>
+      <PropertyRef Name="Doc_id" />
+    </Key>
+    <Property Name="Doc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Addresss" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_number" Type="Int32" />
+    <Property Name="Specification" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="salary" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Doc_id" Type="Int32" />
+    <Property Name="Room_Number" Type="Int32" />
+    <Property Name="Nurse_id" Type="Int32" />
+    <Property Name="med_code" Type="Int32" />
+  </EntityType>
+  <EntityType Name="patients_log">
+    <Key>
+      <PropertyRef Name="user_name_pat" />
+    </Key>
+    <Property Name="user_name_pat" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password_pat" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="HospitalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Doctor_Log" EntityType="Self.Doctor_Log" />
+    <EntitySet Name="Doctorsses" EntityType="Self.Doctorss" />
+    <EntitySet Name="Patients" EntityType="Self.Patient" />
+    <EntitySet Name="patients_log" EntityType="Self.patients_log" />
+  </EntityContainer>
+</Schema>
